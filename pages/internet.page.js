@@ -111,7 +111,34 @@ class Internet {
       return $('#droppable p')
   }
 
+  get dropdownMenu () {
+    return $('#dropdown')
+  }
+
+  get dropdownMenuOption1() {
+    return $('#dropdown option:nth-child(2)')
+  }
+
+  get dropdownMenuOption2() {
+    return $('#dropdown option:nth-child(3)')
+  }
+
   //#endregion
+
+  clickDropdownMenu() {
+    this.dropdownMenu.waitForDisplayed()
+    this.dropdownMenu.click()
+  }
+
+  clickDropdownMenuOption1() {
+    this.dropdownMenuOption1.waitForDisplayed()
+    this.dropdownMenuOption1.click()
+  }
+
+  clickDropdownMenuOption2() {
+    this.dropdownMenuOption2.waitForDisplayed()
+    this.dropdownMenuOption2.click()
+  }
 
   //#region functions
 
