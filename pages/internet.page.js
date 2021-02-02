@@ -153,8 +153,24 @@ class Internet {
     this.dropdownMenuOption2.click()
   }
 
+  get enableButton() {
+    return $('#input-example button')
+  }
+
+  get inputEnabledField() {
+    return $('#input-example input')
+  }
+
   //#region functions
 
+  /**
+   * Click the enable button
+   */
+  clickEnableButton() {
+    this.enableButton.waitForDisplayed()
+    this
+    .enableButton.click()
+  }
    /**
    * Drag and drop
    */
