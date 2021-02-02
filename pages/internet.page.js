@@ -123,7 +123,20 @@ class Internet {
     return $('#dropdown option:nth-child(3)')
   }
 
+  javaScriptAlertButton (index) {
+    return $(`.example li:nth-child(${index}) button`)
+  }
+
   //#endregion
+
+  /**
+   * Click the specific javascript alert button.
+   * @param {Number} index the index of the element
+   */
+  clickJavaSCriptAlertButton(index) {
+    this.javaScriptAlertButton(index).waitForDisplayed()
+    this.javaScriptAlertButton(index).click()
+  }
 
   clickDropdownMenu() {
     this.dropdownMenu.waitForDisplayed()
