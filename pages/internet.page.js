@@ -127,32 +127,6 @@ class Internet {
     return $(`.example li:nth-child(${index}) button`)
   }
 
-  //#endregion
-
-  /**
-   * Click the specific javascript alert button.
-   * @param {Number} index the index of the element
-   */
-  clickJavaSCriptAlertButton(index) {
-    this.javaScriptAlertButton(index).waitForDisplayed()
-    this.javaScriptAlertButton(index).click()
-  }
-
-  clickDropdownMenu() {
-    this.dropdownMenu.waitForDisplayed()
-    this.dropdownMenu.click()
-  }
-
-  clickDropdownMenuOption1() {
-    this.dropdownMenuOption1.waitForDisplayed()
-    this.dropdownMenuOption1.click()
-  }
-
-  clickDropdownMenuOption2() {
-    this.dropdownMenuOption2.waitForDisplayed()
-    this.dropdownMenuOption2.click()
-  }
-
   get enableButton() {
     return $('#input-example button')
   }
@@ -161,15 +135,33 @@ class Internet {
     return $('#input-example input')
   }
 
-  //#region functions
+  get exampleButton () {
+    return $('.example button')
+  }
 
+  deleteButton (index) {
+    return $(`#elements button:nth-child(${index})`)
+  }
+
+  //#endregion
+
+  //#region functions
+  
+  clickExampleButton() {
+    this.exampleButton.waitForDisplayed()
+    this.exampleButton.click()
+  }
+
+  clickDeleteButton(index) {
+    this.deleteButton(index).waitForDisplayed()
+    this.deleteButton(index).click()
+  }
   /**
    * Click the enable button
    */
   clickEnableButton() {
     this.enableButton.waitForDisplayed()
-    this
-    .enableButton.click()
+    this.enableButton.click()
   }
    /**
    * Drag and drop
@@ -305,6 +297,30 @@ class Internet {
     }
     // this is an implicit wait
     this.h3Header.waitForDisplayed();
+  }
+
+    /**
+   * Click the specific javascript alert button.
+   * @param {Number} index the index of the element
+   */
+  clickJavaSCriptAlertButton(index) {
+    this.javaScriptAlertButton(index).waitForDisplayed()
+    this.javaScriptAlertButton(index).click()
+  }
+
+  clickDropdownMenu() {
+    this.dropdownMenu.waitForDisplayed()
+    this.dropdownMenu.click()
+  }
+
+  clickDropdownMenuOption1() {
+    this.dropdownMenuOption1.waitForDisplayed()
+    this.dropdownMenuOption1.click()
+  }
+
+  clickDropdownMenuOption2() {
+    this.dropdownMenuOption2.waitForDisplayed()
+    this.dropdownMenuOption2.click()
   }
 
   //#endregion
