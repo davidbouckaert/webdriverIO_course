@@ -143,10 +143,19 @@ class Internet {
     return $(`#elements button:nth-child(${index})`)
   }
 
+  get pageButton () {
+    return $('#checkbox-example button')
+  }
+
   //#endregion
 
   //#region functions
   
+  clickPageButton () {
+    this.pageButton.waitForDisplayed()
+    this.pageButton.click()
+  }
+
   clickExampleButton() {
     this.exampleButton.waitForDisplayed()
     this.exampleButton.click()
