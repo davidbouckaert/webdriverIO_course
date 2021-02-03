@@ -1,3 +1,12 @@
+const url = require ('./urls')
+const ENV = process.env.ENV
+
+// if ENV does not include any item in the arry, or the ENV variable is not used at all...
+if (!ENV || !['qa','dev','staging'].includes(ENV)) {
+    console.log('Please use the following format when running the script: ENV=qa|dev|staging')
+    process.exit
+}
+
 exports.config = {
     //
     // ====================
@@ -90,7 +99,13 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://the-internet.herokuapp.com/',
+
+    // Old base URL
+    // baseUrl: 'http://the-internet.herokuapp.com/',
+
+    // New base URL, with the ENV setup
+    baseUrl: url[process.env.ENV], // running the 'actions' test suite now looks like: ENV=qa npm run actions
+
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
