@@ -1,6 +1,6 @@
 const { expect, assert } = require('chai');
-const internetPage = require('../pages/internet.page');
-const { getSpecificElementText } = require('../pages/internet.page');
+const internetPage = require('../../pages/internet.page');
+const { getSpecificElementText } = require('../../pages/internet.page');
 
 describe('Test element actions', function () {
   it('should click the element', () => {

@@ -115,6 +115,16 @@ exports.config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
+
+    // creating the suite. Calling upon the suite name 'actions' and pointing it to the location. *.js is to match any javaScript file.
+    suites: {
+        actions:[
+            './test/actions/*.js'
+        ],
+        waitFor: [
+            './test/waitFor/*.js'
+        ],
+    },
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,

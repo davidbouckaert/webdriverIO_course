@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/.bin/wdio ./wdio.conf.js",
-    "lint": "eslint"
+    "lint": "eslint",
+    "actions": "./node_modules/.bin/wdio wdio.conf.js --suite actions",
+    "waitFor": "./node_modules/.bin/wdio wdio.conf.js --suite waitFor"
   },
   "author": "David",
   "license": "ISC",
