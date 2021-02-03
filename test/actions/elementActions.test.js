@@ -1,4 +1,5 @@
 const { expect, assert } = require('chai');
+const loginData = require('../../data/loginData');
 const internetPage = require('../../pages/internet.page');
 const { getSpecificElementText } = require('../../pages/internet.page');
 
@@ -32,17 +33,17 @@ describe('Test element actions', function () {
   it('should enter the username', () => {
     //First go to the correct page by appending /login to our base url (found in wdio.conf.js)
     browser.url(`${browser.options.baseUrl}login`);
-    internetPage.enterUsername('admin');
+    internetPage.enterUsername(loginData.userName);
     // compares the string 'admin' against the value of the 'username' element defined in internet.page.js
-    assert.equal('admin', internetPage.username.getValue());
+    assert.equal(loginData.userName, internetPage.username.getValue());
   });
 
   it('should enter the password', () => {
     //First go to the correct page by appending /login to our base url (found in wdio.conf.js)
     browser.url(`${browser.options.baseUrl}login`);
-    internetPage.enterPassword('admin123');
+    internetPage.enterPassword(loginData.password);
     // compares the string 'admin' against the value of the 'password' element defined in internet.page.js
-    assert.equal('admin123', internetPage.password.getValue());
+    assert.equal(loginData.password, internetPage.password.getValue());
   });
 
   it('should clear the value', () => {
