@@ -4,7 +4,7 @@ const ENV = process.env.ENV
 // if ENV does not include any item in the arry, or the ENV variable is not used at all...
 if (!ENV || !['qa','dev','staging'].includes(ENV)) {
     console.log('Please use the following format when running the script: ENV=qa|dev|staging')
-    process.exit
+    process.exit()
 }
 
 exports.config = {
